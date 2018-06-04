@@ -5,6 +5,8 @@ import LoginScreen from "../views/login";
 import RegisterScreen from "../views/register";
 import HomePage from "../views/home";
 
+//The below code shows default header part with a back arrow that on click popup to previous page
+/*
 const NavigatorStack = StackNavigator({
     AppScreen:
     {
@@ -12,7 +14,11 @@ const NavigatorStack = StackNavigator({
     },
     LoginScreen: 
     {
-      screen: LoginScreen
+      screen: LoginScreen,
+      navigationOptions: {
+        gesturesEnabled: false,
+        header: false
+      }
     },
     RegisterScreen: 
     {
@@ -21,27 +27,46 @@ const NavigatorStack = StackNavigator({
         gesturesEnabled: false,
         header: false
       }
-      /*
-      navigationOptions: {
-        //gesturesEnabled: false,
-        header: false
-      }
-      */
     },
     HomeScreen: 
     {
       screen: HomePage
     },
-    // OrganicDiatDetail: {
-    //   screen: OrganicDiatDetailComponent,
-    // },
-    // ApplyOffer: {
-    //   screen: ApplyOffer,
-    //   navigationOptions: {
-    //     gesturesEnabled: false,
-    //     header: false
-    //   },
-    // }
 });
+*/
+
+//The below code removes or hides header part and gives a blank space to design
+///*
+const NavigatorStack = StackNavigator({
+  AppScreen:
+  {
+    screen: AppScreen
+  },
+  LoginScreen: 
+  {
+    screen: LoginScreen,
+    navigationOptions: {
+      gesturesEnabled: false,
+      header: false
+    }
+  },
+  RegisterScreen: 
+  {
+    screen: RegisterScreen,
+    navigationOptions: {
+      gesturesEnabled: false,
+      header: false
+    }
+  },
+  HomeScreen: 
+  {
+    screen: HomePage
+  },
+}, 
+{
+  headerMode: 'none',
+  //initialRouteName: 'LoginScreen'
+});
+//*/
 export default NavigatorStack;
   
