@@ -38,11 +38,15 @@ export default class home extends Component {
   render() {
     //alert('hello login');
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to {this.state.name}!
-        </Text>
-
+      <View style={styles.container} flexDirection="column">
+        <View style={styles.header}>
+          <Text style={styles.welcome}>back</Text>
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.welcome}>
+            Welcome to {this.state.name}!
+          </Text>
+        </View>
       </View>
       // <View style={styles.container}>
       //   <Text style={styles.welcome}>
@@ -71,6 +75,24 @@ const styles = StyleSheet.create({
     // width: 100,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  header:{
+    flex:10,
+    //width:100,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignSelf: 'stretch',
+    backgroundColor: '#F5FCFF',
+  },
+  body: {
+    flex: 90,
+    // height: 50,
+    // width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    margin:10,
     backgroundColor: '#F5FCFF',
   },
   welcome: {

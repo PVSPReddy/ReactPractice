@@ -73,7 +73,7 @@ export default class login extends Component {
   render() {
     //alert('hello login');
     return (
-      <View style={styles.container}>
+      <View style={styles.container} flexDirection="column">
       {/* {this.renderHeader} */}
       {/* {this.renderBody} */}
       {/*
