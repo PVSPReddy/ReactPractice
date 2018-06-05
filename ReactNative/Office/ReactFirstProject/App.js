@@ -33,6 +33,7 @@ export default class App extends Component{
   constructor(props) {
     super(props);
     var milliseconds = 0;
+    this.setState()
     this.state = {
     
     }

@@ -17,8 +17,8 @@ AppRegistry.registerComponent('appName', () => AppNavigator);
 //endregion
 
 
-AppRegistry.registerComponent('ReactFirstProject', () => StartApp);//this is a stack navigation example
-//AppRegistry.registerComponent('ReactFirstProject', () => StackStartApp);//this is a stack navigation example
+//AppRegistry.registerComponent('ReactFirstProject', () => StartApp);//this is a stack navigation example
+AppRegistry.registerComponent('ReactFirstProject', () => StackStartApp);//this is a stack navigation example
 //AppRegistry.registerComponent('ReactFirstProject', () => DrawerStartApp);//this is a drawer layout example
 //AppRegistry.registerComponent('ReactFirstProject', () => TabStartApp);//this is a tab navigation example
 //AppRegistry.registerComponent('ReactFirstProject', () => App);//for primary navigation

@@ -23,8 +23,15 @@ export default class register extends Component
   constructor(props){
     super(props);
     var milliseconds = 0;
+    var parms = this.props.navigation.state.params;
+    /*
+    this.setState((prevState, props)=>
+    {
+      name: parms.name
+    });
+    */
     this.state = {
-    
+      name : parms.name
     }
   }
   onPressLogin()
@@ -39,6 +46,9 @@ export default class register extends Component
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to Sivaprasad!
+        </Text>
+        <Text style={styles.welcome}>
+          Hello {this.state.name}!
         </Text>
 
       </View>
