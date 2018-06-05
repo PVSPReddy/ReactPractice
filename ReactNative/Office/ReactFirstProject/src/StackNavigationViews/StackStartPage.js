@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BackAndroid } from 'react-native';
-import AppNavigator from './Navigator';
+import NavigatorStack from './StackNavigator';
 //import { GoogleAnalyticsTracker } from "react-native-google-analytics-bridge";
 
 export default class App extends Component {
@@ -13,7 +13,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <AppNavigator />
+      <NavigatorStack />
     );
   }
 
