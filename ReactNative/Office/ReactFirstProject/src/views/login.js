@@ -4,6 +4,7 @@ import {
   Platform,
   StyleSheet,
   Text,
+  TextInput,
   View,
   Button
 } from 'react-native';
@@ -24,41 +25,92 @@ export default class login extends Component {
   constructor(props){
     super(props);
     var milliseconds = 0;
-    this.state = {
-    
-    }
+    this.state = { 
+      uNameText: 'Enter User Name',
+      uPasswordText: "Enter User Password",
+      uPWDPlaceHolder : "Enter User Password"
+    };
   }
   onPressregister()
   {
     //alert('Welcome to login page! click button');
-    this.props.navigation.navigate('RegisterScreen');
-    //this.props.navigation.navigate('AppScreen');
+    //this.props.navigation.navigate('RegisterScreen');
+    this.props.navigation.navigate('HomeScreen',{
+      uName: this.state.uNameText,
+      uPWD : this.state.uPasswordText
+    });
     //AppRegistry.registerComponent('ReactTestOne', () => HomePage);
+  }
+
+  renderHeader()
+  {
+    return(
+      <View style={styles.header}>
+        <Text style={styles.welcome}>back</Text>
+      </View>
+    );
+  }
+
+  renderBody()
+  {
+    return(
+      <View style={styles.body}>
+        <TextInput style={{height: 40, borderColor: 'gray', borderBottomColor: '#000000', borderWidth: 1}} multiline={true} numberOfLines={3} onChangeText={(text) => this.setState({uNameText : text})} value={this.state.uNameText} />
+        <TextInput style={{height: 40, borderColor: 'transparent', borderBottomColor: '#00000000', borderWidth: 1}} underlineColorAndroid={"#00000000"} multiline={false} returnKeyType="done" placeholder={this.state.uPWDPlaceHolder} onChangeText={(text) => this.setState({uPasswordText : text})} />
+        {/*
+        keyboardType={'numeric'}
+              returnKeyType="done"
+              maxLength={6}
+              underlineColorAndroid='transparent'
+              selectionColor={color.darkGray}
+        */}
+        <Button onPress={()=> this.onPressregister()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
+        </Button>
+      </View>
+    );
   }
 
   render() {
     //alert('hello login');
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Sivaprasad!
-        </Text>
-        <Button onPress={()=> this.onPressregister()} title="register" color="#841584" accessibilityLabel="Learn more about this purple button">
+      {/* {this.renderHeader} */}
+      {/* {this.renderBody} */}
+      {/*
+        <TextInput style={{height: 40, borderColor: 'gray', borderBottomColor: '#000000', borderWidth: 1}} multiline={true} numberOfLines={3} onChangeText={(text) => this.setState({uNameText : text})} value={this.state.uNameText} />
+        <TextInput style={{height: 40, borderColor: 'transparent', borderBottomColor: '#00000000', borderWidth: 1}} underlineColorAndroid={"#00000000"} multiline={false} returnKeyType="done" placeholder={this.state.uPWDPlaceHolder} onChangeText={(text) => this.setState({uPasswordText : text})} />
+        {/*
+        keyboardType={'numeric'}
+              returnKeyType="done"
+              maxLength={6}
+              underlineColorAndroid='transparent'
+              selectionColor={color.darkGray}
+        * /}
+        <Button onPress={()=> this.onPressregister()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
         </Button>
+        */}
+
+
+
+
+        <View style={styles.header}>
+          <Text style={styles.welcome}>back</Text>
+        </View>
+        <View style={styles.body}>
+          {/* <TextInput style={{height: 40, borderColor: 'gray', borderBottomColor: '#000000', borderWidth: 1, alignSelf: 'stretch'}} multiline={true} numberOfLines={3} onChangeText={(text) => this.setState({uNameText : text})} value={this.state.uNameText} /> */}
+          <TextInput style={{height: 40, borderColor: 'gray', borderBottomColor: '#000000', borderWidth: 1, alignSelf: 'stretch'}} multiline={true} numberOfLines={3} onChangeText={(text) => this.setState({uNameText : text})} placeholder="Enter User Name" />
+          <TextInput style={{height: 40, borderColor: 'transparent', borderBottomColor: '#00000000', borderWidth: 1, alignSelf: 'stretch'}} underlineColorAndroid={"#00000000"} multiline={false} returnKeyType="done" placeholder={this.state.uPWDPlaceHolder} onChangeText={(text) => this.setState({uPasswordText : text})} />
+          {/*
+          keyboardType={'numeric'}
+              returnKeyType="done"
+              maxLength={6}
+              underlineColorAndroid='transparent'
+              selectionColor={color.darkGray}
+          */}
+          <Button onPress={()=> this.onPressregister()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
+          </Button>
+        </View>
       </View>
-      // <View style={styles.container}>
-      //   <Text style={styles.welcome}>
-      //     Welcome to Sivaprasad!
-      //   </Text>
-      //   <Text style={styles.instructions}>
-      //     lets start the tutorial
-      //   </Text>
-      //   <Button onPress={this.onPressLogin} title="Login" color="#841584" accessibilityLabel="Learn more about this purple button">
-      //   </Button>
-      //   <Text style={styles.instructions}>
-      //     {instructions}
-      //   </Text>
-      // </View>
     );
   }
 }
@@ -70,6 +122,24 @@ const styles = StyleSheet.create({
     // width: 100,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  header:{
+    flex:10,
+    //width:100,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignSelf: 'stretch',
+    backgroundColor: '#F5FCFF',
+  },
+  body: {
+    flex: 90,
+    // height: 50,
+    // width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    margin:10,
     backgroundColor: '#F5FCFF',
   },
   welcome: {

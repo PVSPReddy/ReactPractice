@@ -24,8 +24,9 @@ export default class home extends Component {
   constructor(props){
     super(props);
     var milliseconds = 0;
+    var parms = this.props.navigation.state.params;
     this.state = {
-    
+      name : parms.uName
     }
   }
   onPressLogin()
@@ -35,11 +36,11 @@ export default class home extends Component {
   }
 
   render() {
-    alert('hello login');
+    //alert('hello login');
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to Sivaprasad!
+          Welcome to {this.state.name}!
         </Text>
 
       </View>
