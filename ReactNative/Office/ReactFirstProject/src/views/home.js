@@ -35,12 +35,19 @@ export default class home extends Component {
     //AppRegistry.registerComponent('ReactTestOne', () => HomePage);
   }
 
+  onBackButtonClicked()
+  {
+    this.props.navigation.goBack(null);
+    //alert('You clicked back button');
+    //AppRegistry.registerComponent('ReactTestOne', () => HomePage);
+  }
+
   render() {
     //alert('hello login');
     return (
       <View style={styles.container} flexDirection="column">
         <View style={styles.header}>
-          <Text style={styles.welcome}>back</Text>
+          <Button style={styles.welcome} title="back" onPress={()=>this.onBackButtonClicked()}></Button>
         </View>
         <View style={styles.body}>
           <Text style={styles.welcome}>

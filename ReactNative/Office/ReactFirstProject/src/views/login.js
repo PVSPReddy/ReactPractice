@@ -31,7 +31,7 @@ export default class login extends Component {
       uPWDPlaceHolder : "Enter User Password"
     };
   }
-  onPressregister()
+  onLoginClicked()
   {
     //alert('Welcome to login page! click button');
     //this.props.navigation.navigate('RegisterScreen');
@@ -42,11 +42,16 @@ export default class login extends Component {
     //AppRegistry.registerComponent('ReactTestOne', () => HomePage);
   }
 
+  onRegisterCLicked()
+  {
+    this.props.navigation.navigate('RegisterScreen');
+  }
+
   renderHeader()
   {
     return(
       <View style={styles.header}>
-        <Text style={styles.welcome}>back</Text>
+        <Text style={styles.welcome}>User Login</Text>
       </View>
     );
   }
@@ -64,7 +69,7 @@ export default class login extends Component {
               underlineColorAndroid='transparent'
               selectionColor={color.darkGray}
         */}
-        <Button onPress={()=> this.onPressregister()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
+        <Button onPress={()=> this.onLoginClicked()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
         </Button>
       </View>
     );
@@ -94,7 +99,7 @@ export default class login extends Component {
 
 
         <View style={styles.header}>
-          <Text style={styles.welcome}>back</Text>
+          <Text style={styles.welcome}>User Login</Text>
         </View>
         <View style={styles.body}>
           {/* <TextInput style={{height: 40, borderColor: 'gray', borderBottomColor: '#000000', borderWidth: 1, alignSelf: 'stretch'}} multiline={true} numberOfLines={3} onChangeText={(text) => this.setState({uNameText : text})} value={this.state.uNameText} /> */}
@@ -107,8 +112,11 @@ export default class login extends Component {
               underlineColorAndroid='transparent'
               selectionColor={color.darkGray}
           */}
-          <Button onPress={()=> this.onPressregister()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
+          <Button onPress={()=> this.onLoginClicked()} title="login" color="#841584" accessibilityLabel="Learn more about this purple button">
           </Button>
+        </View>
+        <View style={styles.footer}>
+          <Button style={styles.welcome} title="Register" onPress={()=> this.onRegisterCLicked()}></Button>
         </View>
       </View>
     );
@@ -127,19 +135,27 @@ const styles = StyleSheet.create({
   header:{
     flex:10,
     //width:100,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: '#F5FCFF',
   },
   body: {
-    flex: 90,
+    flex: 80,
     // height: 50,
     // width: 100,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'stretch',
     margin:10,
+    backgroundColor: '#F5FCFF',
+  },
+  footer:{
+    flex:10,
+    //width:100,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    alignSelf: 'flex-end',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
