@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import {
+  AppRegistry,
   Platform,
   StyleSheet,
   Text,
@@ -8,7 +9,8 @@ import {
   Button
 } from 'react-native';
 
-import HomePage from './home';
+import ColorStartDrawer from "../NavigationComponents/ColorDrawerStartPage";
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -29,6 +31,14 @@ export default class register extends Component
   }
   onRegisterClicked()
   {
+    //this.props.navigation.navigate("ColorStartStack");
+
+
+    this.props.navigation.navigate("ColorStartDrawer");
+    //AppRegistry.registerComponent('ReactFirstProject', () => ColorStartDrawer);
+    //AppRegistry.registerComponent('ReactTestOne', () => ColorStartDrawer);
+
+
     //alert('Welcome to registration page! click button');
     //AppRegistry.registerComponent('ReactTestOne', () => HomePage);
   }

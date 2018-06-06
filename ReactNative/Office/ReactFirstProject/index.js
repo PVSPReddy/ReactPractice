@@ -5,6 +5,7 @@ import StackStartApp from './src/StackNavigationViews/StackStartPage';
 import DrawerStartApp from './src/DrawerNavigationViews/DrawerStartPage';
 import TabStartApp from './src/TabNavigationViews/TabStartPage';
 import Login from './src/views/login';
+import TestPage from './src/views/color_pages/orangepage';
 
 //region
 /*
@@ -16,7 +17,7 @@ AppRegistry.registerComponent('appName', () => AppNavigator);
 */
 //endregion
 
-
+//AppRegistry.registerComponent('ReactFirstProject', () => TestPage);
 AppRegistry.registerComponent('ReactFirstProject', () => StartApp);//this is a stack navigation example
 //AppRegistry.registerComponent('ReactFirstProject', () => StackStartApp);//this is a stack navigation example
 //AppRegistry.registerComponent('ReactFirstProject', () => DrawerStartApp);//this is a drawer layout example
