@@ -9,7 +9,7 @@ import {
   Button
 } from 'react-native';
 
-import CustomEntry from '../SupportingViews/CustomEntry';
+import CustomEntry from './SupportingViews/CustomEntry';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
