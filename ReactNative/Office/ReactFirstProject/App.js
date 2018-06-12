@@ -12,6 +12,12 @@ import {
   View
   // Navigator
 } from 'react-native';
+
+import SplashScreen from './src/views/SplashScreen';
+//import Home from './src/NavigationComponents/AppStartPage';
+import Home from './src/views/login';
+import Error from "./Error";
+
 // import {
 //   StackNavigator,
 // } from 'react-navigation';
@@ -30,6 +36,7 @@ const instructions = Platform.select({
 
 export default class App extends Component{
 
+  /*
   constructor(props) {
     super(props);
     var milliseconds = 0;
@@ -38,7 +45,35 @@ export default class App extends Component{
     
     }
   }
+  */
 
+  componentWillMount() {
+    this.state = {
+        view : <SplashScreen />
+    };
+
+
+    setTimeout(() => {
+        //IF FALSE NAVIGATE TO ERROR
+        if(true) {
+            this.setState({
+                view : <Home/>
+            })
+        } else {
+            this.setState({
+                view : <Error/>
+            })
+        }
+    }, 2000) //TIME OF WAITING
+
+
+}
+
+render() {
+    return (
+        this.state.view
+    )
+}
   // navigationRenderScene(route, navigator)
   // {
   //   switch (route.id)
@@ -49,6 +84,7 @@ export default class App extends Component{
   //   }
   // }
 
+  /*
   onPressLogin()
   {
     //alert("Button clicked");
@@ -63,10 +99,10 @@ export default class App extends Component{
       <View style={styles.container}>
 
       {/*<NavigationExperimental.Navigator initialRoute = {{ id: 'page1' }}
-      renderScene = {this.navigationRenderScene}/>*/}
+      renderScene = {this.navigationRenderScene}/>* /}
 
       {/* <NavigationExperimental.Navigator initialRoute = {{ id: 'page1' }}
-      renderScene = {this.navigationRenderScene}/> */}
+      renderScene = {this.navigationRenderScene}/> * /}
 
         <Text style={styles.welcome}>
           Welcome to React Native!
@@ -82,6 +118,7 @@ export default class App extends Component{
       </View>
     );
   }
+  */
 }
 
 const styles = StyleSheet.create({
